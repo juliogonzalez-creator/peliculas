@@ -1,0 +1,187 @@
+{
+	"info": {
+		"_postman_id": "b3e1f13b-852b-4d40-9a4f-peliculas-api",
+		"name": "API Peliculas (PostgreSQL + Node.js)",
+		"description": "Colección completa con todos los endpoints CRUD para la API de Películas.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Obtener todas las películas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/peliculas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"peliculas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2. Filtrar películas (por género o título)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/peliculas?genero=Ciencia",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"peliculas"
+					],
+					"query": [
+						{
+							"key": "genero",
+							"value": "Ciencia"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3. Obtener película por ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/peliculas/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"peliculas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4. Crear nueva película",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"titulo\": \"Oppenheimer\",\n  \"genero\": \"Drama / Historia\",\n  \"anio\": 2023,\n  \"director\": \"Christopher Nolan\",\n  \"duracion_min\": 180,\n  \"calificacion\": 8.9,\n  \"sinopsis\": \"La historia del físico J. Robert Oppenheimer y el desarrollo de la bomba atómica.\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/peliculas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"peliculas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5. Actualizar película completa (PUT)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"titulo\": \"Inception (Edición Especial)\",\n  \"genero\": \"Ciencia Ficción / Acción\",\n  \"anio\": 2010,\n  \"director\": \"Christopher Nolan\",\n  \"duracion_min\": 148,\n  \"calificacion\": 9.1,\n  \"sinopsis\": \"Un ladrón que roba secretos corporativos a través de los sueños recibe una última misión de implantar una idea.\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/peliculas/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"peliculas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6. Actualizar campo parcial (PATCH)",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"calificacion\": 9.5\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/peliculas/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"peliculas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "7. Eliminar película (DELETE)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/peliculas/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"peliculas",
+						"10"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
