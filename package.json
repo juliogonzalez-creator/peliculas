@@ -1,8 +1,9 @@
 {
-  "name": "desktop",
+  "name": "peliculas-backend",
   "version": "1.0.0",
   "main": "servidor_peliculas.js",
   "scripts": {
+    "start": "node servidor_peliculas.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
